@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Alina's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ffb6c1; /* Pastel pink on hover */
+        }
+
+        nav .contact {
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav .contact:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #eae5e5;
+            color: #2e2c2c;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-info a {
+            margin: 0 10px;
+            color: #2e2c2c;
+            text-decoration: none;
+        }
+
+        .contact-info a img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            padding: 20px;
+            position: relative; /* Position relative for arrow indicators */
+        }
+
+        .post {
+            flex: 0 0 auto; /* Do not grow or shrink */
+            width: 300px; /* Fixed width for posts */
+            margin-right: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .post img {
+            width: 100%;
+            height: 200px; /* Fixed height for uniform thumbnails */
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d96b6b;
+            margin: 10px 0;
+        }
+
+        .post-title a {
+            text-decoration: none;
+            color: #d96b6b;
+        }
+
+        .post-title a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content {
+            font-size: 14px;
+            color: #333;
+            flex-grow: 1;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        /* Hide scrollbar */
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Arrow indicators */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+
+        .arrow:hover {
+            opacity: 1;
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">ALINA's PORTFOLIO</a>
+            </div>
+            <div class="nav-right">
+                <a href="index.html">About Me</a>
+                <a href="Projects.html">Projects</a>
+                <a href="Blog.html">Blog</a>
+                <a href="mailto:alinaadyana@gmail.com" class="contact">Request CV</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <section class="blog">
+            <button class="arrow arrow-left" onclick="scrollLeft()">&#9664;</button>
+            <div class="container" id="scroll-container">
+                <div class="post">
+                    <img src="images/Blog/image1.png" alt="Post Image">
+                    <div class="post-title"><a href="https://medium.com/@linschq/discovering-the-heart-of-data-science-a-personal-journey-27d237f6fb9c">Discovering the Heart of Data Science: A Personal Journey</a></div>
+                    <div class="post-content">I took my first three-years career as a Public Health researcher in RSUP DR Cipto Mangunkusumo Hospital, Faculty of Medicine Universitas Indonesia, before finally landed on Corporate Job for the next six years. When I started getting involved in Public Health research, I realized data had an important role in finding solutions...</div>
+                    <div class="post-meta"> Medium | Data Science | No comments</div>
+                </div>
+                <div class="post">
+                    <img src="images/Blog/image2.png" alt="Post Image">
+                    <div class="post-title"><a href="https://linakariim.com/2020/07/22/investing-during-the-bearish-market/">Investing in Bearish Market</a></div>
+                    <div class="post-content">Disclaimer: I used the available market data during Bearish Market in 2019. However, these techniques can be applied to other market condition as well. The tutorials referred were mostly performed using MS Excel.
+                        COVID-19 pandemic, which has infected since the end of 2019, has knocked out capital markets around the world, including in Indonesia. Also during the pandemic, I heard people start competing to offer various safe investments. Considering to its impact to Indonesia economic, my benchmark is naturally directed ...</div>
+                    <div class="post-meta"> Wordpress | Economic | 2 comments</div>
+                </div>
+                <div class="post">
+                    <img src="images/Blog/image3.png" alt="Post Image">
+                    <div class="post-title"><a href="https://linakariim.com/2019/08/24/on-reflection/"> On Reflection </a></div>
+                    <div class="post-content">Bill Gates, Mark Zuckenberg, Warren Buffet and Oprah Winfrey have this 5-hour rule which also contains time to reflect. CEO of Linkedin, Jeff Weiner schedules his 2-hour time per day in order to think. He was saying that scheduling for nothing improves his productivity.
+                        I, in other hand, usually take time for thinking and writing during my commute. It usually takes about 3-6 hours of commuting and either I spent my time for sleeping, ...</div>
+                    <div class="post-meta"> Wordpress | Business Acument | No comments</div>
+                </div>
+                <div class="post">
+                    <img src="images/Blog/image4.png" alt="Post Image">
+                    <div class="post-title"><a href="https://linakariim.com/2019/08/18/on-making-peace-with-emotion/"> on making peace with emotion </a></div>
+                    <div class="post-content">This week I have three serious topics I am trying to write, yet still unfinished. The tendency to only research, yet a bit lazy when it comes about writing haunts me. Moreover, I have too many excuses not to write those topics for I have jobs and thesis as my current priorities. The two paradoxical thinking, both the genius of AND and the tyranny of OR, are two concepts of thinking which hold ourselves back from greater clarity in life.
+                        It was firstly introduced by Jim Collins from the book he wrote titled Build to Last. This concept has already applied around various lines from psychology to business to science to philosophy and ...</div>
+                    <div class="post-meta"> Wordpress | Decision Making | No comments</div>
+                </div>
+                <div class="post">
+                    <img src="images/Blog/image5.png" alt="Post Image">
+                    <div class="post-title"><a href="https://linakariim.com/2023/08/26/a-book-polygamist/">A Book Polygamist</a></div>
+                    <div class="post-content">Surrounded by books, each one a world in itself, a journey through time and space, thought and emotion...</div>
+                    <div class="post-meta"> Wordpress | Personal Development | 1 comment</div>
+                </div>
+            </div>
+            <button class="arrow arrow-right" onclick="scrollRight()">&#9654;</button>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>Say hello!</p>
+        <div class="contact-info">
+            <a href="mailto:alinaadyana@gmail.com"><img src="icons/email.png" alt="Email"></a>
+            <a href="https://www.linkedin.com/in/alina-ady/"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/linschq"><img src="icons/github.png" alt="GitHub"></a>
+        </div>
+    </footer>
+
+    <script>
+        function scrollLeft() {
+            document.getElementById('scroll-container').scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollRight() {
+            document.getElementById('scroll-container').scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide arrows based on scroll position
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('scroll-container');
+            const leftArrow = document.querySelector('.arrow-left');
+            const rightArrow = document.querySelector('.arrow-right');
+
+            container.addEventListener('scroll', function () {
+                if (container.scrollLeft === 0) {
+                    leftArrow.style.display = 'none';
+                } else {
+                    leftArrow.style.display = 'block';
+                }
+
+                if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+                    rightArrow.style.display = 'none';
+                } else {
+                    rightArrow.style.display = 'block';
+                }
+            });
+
+            // Initial check
+            container.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+</body>
+</html>

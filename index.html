@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: #000; /* Default link color black */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ffb6c1; /* Pastel pink on hover */
+        }
+
+        nav .contact {
+            border: 1px solid #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav .contact:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .intro-text {
+            max-width: 50%;
+        }
+
+        .intro-text h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #222;
+        }
+
+        .intro-text p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .projects-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .projects-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            vertical-align: middle;
+        }
+
+        .projects-btn:hover {
+            background-color: #555;
+        }
+
+        .projects-btn::after {
+            content: " →";
+        }
+
+        .social-links {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .social-links a {
+            margin: 0 5px;
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .intro-image img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .quote {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        .projects {
+            padding: 20px 0;
+        }
+
+        .projects h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #222;
+        }
+
+        .project-cards {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .project-card {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .project-card a {
+            color: #000; /* Default link color black */
+            text-decoration: none;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+            color: #ffb6c1; /* Pastel pink on hover */
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #222;
+            text-decoration: none;
+            border: 1px solid #222;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .read-more:hover {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .other-stuff {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .other-stuff h2 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        .other-stuff ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .other-stuff ul li {
+            margin: 10px 0;
+        }
+
+        .other-stuff ul li a {
+            color: #000; /* Default link color black */
+            text-decoration: none;
+        }
+
+        .other-stuff ul li a:hover {
+            text-decoration: underline;
+            color: #ffb6c1; /* Pastel pink on hover */
+        }
+
+        footer {
+            background-color: #eae5e5;
+            color: #2e2c2c;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-info a {
+            margin: 0 10px;
+            color: #2e2c2c;
+            text-decoration: none;
+        }
+
+        .contact-info a img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-info a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="#">ALINA's PORTFOLIO</a>
+            </div>
+            <div class="nav-right">
+                <a href="index.html">About Me</a>
+                <a href="Projects.html">Projects</a>
+                <a href="Blog.html">Blog</a>
+                <a href="mailto:alinaadyana@gmail.com" class="contact">Request CV</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="intro-text">
+                <h1>Heya, I'm Alina - a data scientist working as a policy analyst.</h1>
+                <p>A data nerd with experience in energy sectors.</p>
+                <div class="projects-container">
+                    <a href="Projects.html" class="projects-btn">Projects</a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/alina-ady/"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+                        <a href="https://github.com/linschq"><img src="icons/github.png" alt="GitHub"></a>
+                        <a href="https://medium.com/@linschq"><img src="icons/medium.png" alt="Medium"></a>
+                        <a href="mailto:alinaadyana@gmail.com"><img src="icons/email.png" alt="Email"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="intro-image">
+                <img src="images/alinaprofile.jpg" alt="Profile Picture">
+            </div>
+        </section>
+        <section class="quote">
+            <blockquote>“Insight stems from perception. In the quietude of reflection, wisdom is nurtured, and data exposes the bedrock of truth."</blockquote>
+        </section>
+        <section class="projects">
+            <h2>Recent projects</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <h3><a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb">Assessing the Dynamics of CO2 Emissions and Energy Consumption: A Global Perspective</a></h3>
+                    <p>Category: <a href="Projects.html?category=Exploratory%20Data%20Analysis">Exploratory Data Analysis</a></p>
+                    <img src="images/Projects/co2emission.png" alt="Project 1">
+                    <p>07/06/2024</p>
+                    <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="read-more">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3><a href="https://educational-dashboard.streamlit.app">Streamlit Educational Dashboard</a></h3>
+                    <p>Category: <a href="Projects.html?category=Data%20Visualization">Data Visualization</a></p>
+                    <img src="images/Projects/streamlit edu dash.png" alt="Project 2">
+                    <p>01/06/2024</p>
+                    <a href="https://educational-dashboard.streamlit.app" class="read-more">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3><a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1">Overview of Indonesia Education Landscape</a></h3>
+                    <p>Category: <a href="Projects.html?category=Data%20Visualization">Data Visualization</a></p>
+                    <img src="images/Projects/indonesia education landscape.png" alt="Project 3">
+                    <p>30/03/2024</p>
+                    <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="read-more">Read more</a>
+                </div>
+            </div>
+        </section>
+        <section class="other-stuff">
+            <h2>Other stuff I do</h2>
+            <p>I write articles and newsletters and have a platform for sharing data nerd content. Additionally, I host creative corners and book club discussions.</p>
+            <ul>
+                <li><a href="https://about.me/adyana">📺 Alina's Creative Corners</a></li>
+                <li><a href="https://medium.com/@linschq">✍️ Medium articles</a></li>
+                <li><a href="https://www.instagram.com/serat_kalbu/">📖 Current Reads: Storytelling with Data by Cole Nussbaumer Knaflic</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Say hello!</p>
+        <div class="contact-info">
+            <a href="mailto:alinaadyana@gmail.com"><img src="icons/email.png" alt="Email"></a>
+            <a href="https://www.linkedin.com/in/alina-ady/"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/linschq"><img src="icons/github.png" alt="GitHub"></a>
+        </div>
+    </footer>
+</body>
+</html>

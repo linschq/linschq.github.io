@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Alina's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            color: #000; /* Default link color black */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ffb6c1; /* Pastel pink on hover */
+        }
+
+        nav .contact {
+            border: 1px solid #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav .contact:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .projects-header {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2em;
+            color: #222;
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filter-buttons button.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-card {
+            display: none; /* Hide all project cards by default */
+            background-color: #f8f8f8;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .project-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-details h3 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        .project-details p {
+            color: #666;
+        }
+
+        .project-details a.category-link {
+            color: #000; /* Default link color black */
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .project-details a.category-link:hover {
+            text-decoration: underline;
+            color: #ffb6c1; /* Pastel pink on hover */
+        }
+
+        .project-details a.project-name {
+            color: #000; /* Default link color black */
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .project-details a.project-name:hover {
+            color: #ffb6c1; /* Pastel pink on hover */
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #000; /* Default link color black */
+            text-decoration: none;
+            border: 1px solid #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            width: 100px; /* Set width for consistency */
+            text-align: center; /* Center text */
+        }
+
+        .read-more:hover {
+            background-color: #000;
+            color: #ffb6c1; /* Pastel pink on hover */
+            border-color: #ffb6c1; /* Pastel pink border on hover */
+        }
+
+        footer {
+            background-color: #eae5e5;
+            color: #2e2c2c;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .contact-info a {
+            margin: 0 10px;
+            color: #2e2c2c;
+            text-decoration: none;
+        }
+
+        .contact-info a img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-info a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">ALINA's PORTFOLIO</a>
+            </div>
+            <div class="nav-right">
+                <a href="index.html">About Me</a>
+                <a href="Projects.html">Projects</a>
+                <a href="Blog.html">Blog</a>
+                <a href="mailto:alinaadyana@gmail.com" class="contact">Request CV</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="projects-header">Projects</div>
+        <div class="filter-buttons">
+            <button class="filter-btn" onclick="filterProjects('all', 'all')">All</button>
+            <button class="filter-btn" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</button>
+            <button class="filter-btn" onclick="filterProjects('Exploratory Data Analysis', 'all')">Exploratory Data Analysis</button>
+            <button class="filter-btn" onclick="filterProjects('Machine Learning', 'all')">Machine Learning</button>
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProjects('all', 'all')">All Years</button>
+            <button class="filter-btn" onclick="filterProjects('all', '2024')">2024</button>
+        </div>
+        <div class="project-list">
+            <div class="project-card" data-category="Exploratory Data Analysis" data-year="2024">
+                <img src="images/Projects/co2emission.png" alt="Project 1">
+                <div class="project-details">
+                    <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="project-name"><h3>Assessing the Dynamics of CO2 Emissions and Energy Consumption: A Global Perspective</h3></a>
+                    <p>By <a href="index.html" class="project-name">Alina</a></p>
+                    <p>Category: <a href="#" class="category-link" onclick="filterProjects('Exploratory Data Analysis', 'all')">Exploratory Data Analysis</a></p>
+                    <p>Date: 07/06/2024</p>
+                    <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="read-more">Read more</a>
+                </div>
+            </div>
+            <div class="project-card" data-category="Data Visualization" data-year="2024">
+                <img src="images/Projects/streamlit edu dash.png" alt="Project 2">
+                <div class="project-details">
+                    <a href="https://educational-dashboard.streamlit.app" class="project-name"><h3>Streamlit Educational Dashboard</h3></a>
+                    <p>By <a href="index.html" class="project-name">Alina</a></p>
+                    <p>Category: <a href="#" class="category-link" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</a></p>
+                    <p>Date: 01/06/2024</p>
+                    <a href="https://educational-dashboard.streamlit.app" class="read-more">Read more</a>
+                </div>
+            </div>
+            <div class="project-card" data-category="Data Visualization" data-year="2024">
+                <img src="images/Projects/indonesia education landscape.png" alt="Project 3">
+                <div class="project-details">
+                    <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="project-name"><h3>Overview of Indonesia Education Landscape</h3></a>
+                    <p>By <a href="index.html" class="project-name">Alina</a></p>
+                    <p>Category: <a href="#" class="category-link" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</a></p>
+                    <p>Date: 30/03/2024</p>
+                    <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="read-more">Read more</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Say hello!</p>
+        <div class="contact-info">
+            <a href="mailto:alinaadyana@gmail.com"><img src="icons/email.png" alt="Email"></a>
+            <a href="https://www.linkedin.com/in/alina-ady/"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/linschq"><img src="icons/github.png" alt="GitHub"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to filter projects
+        function filterProjects(category, year) {
+            var projects = document.getElementsByClassName('project-card');
+            for (var i = 0; i < projects.length; i++) {
+                var projectCategory = projects[i].getAttribute('data-category');
+                var projectYear = projects[i].getAttribute('data-year');
+                if ((category === 'all' || projectCategory === category) && (year === 'all' || projectYear === year)) {
+                    projects[i].style.display = 'flex'; // Show matching projects
+                } else {
+                    projects[i].style.display = 'none'; // Hide non-matching projects
+                }
+            }
+            // Update active class on buttons
+            var buttons = document.getElementsByClassName('filter-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            event.target.classList.add('active');
+        }
+
+        // Initial display of all projects
+        document.addEventListener('DOMContentLoaded', function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var category = urlParams.get('category') || 'all';
+            filterProjects(category, 'all');
+        });
+    </script>
+</body>
+</html>
