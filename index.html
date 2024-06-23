@@ -80,6 +80,7 @@
             margin-top: 20px;
         }
 
+        /* CSS for the "Projects →" button */
         .projects-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -88,22 +89,30 @@
             text-decoration: none;
             border-radius: 5px;
             vertical-align: middle;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .projects-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            vertical-align: middle;
+            transition: transform 0.3s, filter 0.3s;
         }
 
         .projects-btn:hover {
-            background-color: #555;
+            filter: invert(55%) sepia(5%) saturate(450%) hue-rotate(150deg) brightness(90%) contrast(80%);
+            color: #fff; /* Ensure text stays white */
         }
 
         .projects-btn::after {
             content: " →";
         }
 
-        .social-links {
-            display: inline-block;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
+        /* CSS for the icons in the main content */
         .social-links a {
             margin: 0 5px;
             transition: transform 0.3s, filter 0.3s;
@@ -115,7 +124,7 @@
         }
 
         .social-links a:hover img {
-            filter: grayscale(100%);
+            filter: invert(55%) sepia(5%) saturate(450%) hue-rotate(150deg) brightness(90%) contrast(80%);
         }
 
         .intro-image img {
@@ -216,36 +225,6 @@
             color: #fff;
         }
 
-        .other-stuff {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .other-stuff h2 {
-            margin-top: 0;
-            color: #222;
-        }
-
-        .other-stuff ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .other-stuff ul li {
-            margin: 10px 0;
-        }
-
-        .other-stuff ul li a {
-            color: #000;
-            text-decoration: none;
-        }
-
-        .other-stuff ul li a:hover {
-            text-decoration: underline;
-            color: #ffb6c1;
-        }
-
         footer {
             background-color: #eae5e5;
             color: #2e2c2c;
@@ -253,20 +232,33 @@
             padding: 20px;
         }
 
-        .contact-info a {
+        footer .contact-info a {
             margin: 0 10px;
             color: #2e2c2c;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .contact-info a img {
+        footer .contact-info a img {
             width: 20px;
             height: 20px;
+            transition: filter 0.3s ease;
         }
 
-        .contact-info a:hover {
+        footer .contact-info a:hover {
             color: #555;
         }
+
+        footer .contact-info a:hover img {
+            filter: invert(55%) sepia(5%) saturate(450%) hue-rotate(150deg) brightness(90%) contrast(80%);
+        }
+
+        footer .copyright {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
 
         @media (max-width: 768px) {
             .intro-text {
@@ -293,10 +285,10 @@
     <header>
         <nav>
             <div class="nav-left">
-                <a href="#">ALINA's PORTFOLIO</a>
+                <a href="index.html">Home</a>
             </div>
             <div class="nav-right">
-                <a href="index.html">About Me</a>
+                <a href="aboutme.html">About Me</a>
                 <a href="Projects.html">Projects</a>
                 <a href="Blog.html">Blog</a>
                 <a href="mailto:alinaadyana@gmail.com?subject=Request%20CV&body=Dear%20Alina,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20copy%20of%20your%20CV.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]" class="contact">Request CV</a>
@@ -351,15 +343,6 @@
                 </div>
             </div>
         </section>
-        <section class="other-stuff">
-            <h2>Other stuff I do</h2>
-            <p>I write articles and newsletters and have a platform for sharing data nerd content. Additionally, I host creative corners and book club discussions.</p>
-            <ul>
-                <li><a href="https://about.me/adyana">📺 Alina's Creative Corners</a></li>
-                <li><a href="https://medium.com/@linschq">✍️ Medium articles</a></li>
-                <li><a href="https://www.instagram.com/serat_kalbu/">📖 Current Reads: Storytelling with Data by Cole Nussbaumer Knaflic</a></li>
-            </ul>
-        </section>
     </main>
     <footer>
         <p>Say hello!</p>
@@ -368,6 +351,10 @@
             <a href="https://www.linkedin.com/in/alina-ady/"><img src="icons/linkedin.png" alt="LinkedIn"></a>
             <a href="https://github.com/linschq"><img src="icons/github.png" alt="GitHub"></a>
         </div>
+        <div class="copyright">
+            <p>&copy; 2024 Alina's Portfolio. Design by Alina, images generated by Dall-E</p>
+        </div>
     </footer>
+    
 </body>
 </html>

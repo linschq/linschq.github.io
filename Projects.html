@@ -100,8 +100,8 @@
         }
 
         .project-card img {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
             margin-right: 20px;
@@ -111,7 +111,11 @@
         .project-card:hover img {
             transform: scale(1.05);
         }
-
+        
+        .project-card a.project-name:hover h3 {
+            color: #ffb6c1; /* Pastel pink hover effect */
+        }
+        
         .project-details {
             display: flex;
             flex-direction: column;
@@ -169,6 +173,30 @@
             border-color: #ffb6c1;
         }
 
+        .skills-needed .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skills-needed .tag {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            color: #333;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .skills-needed .tag:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+
         footer {
             background-color: #eae5e5;
             color: #2e2c2c;
@@ -202,10 +230,10 @@
     <header>
         <nav>
             <div class="nav-left">
-                <a href="index.html">ALINA's PORTFOLIO</a>
+                <a href="index.html">Home</a>
             </div>
             <div class="nav-right">
-                <a href="index.html">About Me</a>
+                <a href="aboutme.html">About Me</a>
                 <a href="Projects.html">Projects</a>
                 <a href="Blog.html">Blog</a>
                 <a href="mailto:alinaadyana@gmail.com?subject=Request%20CV&body=Dear%20Alina,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20copy%20of%20your%20CV.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]" class="contact">Request CV</a>
@@ -228,43 +256,103 @@
             <div class="project-card" data-category="Machine Learning" data-year="2024">
                 <img src="images/Projects/Project 4.webp" alt="Airlines Customer Segmentation">
                 <div class="project-details">
-                    <a href="https://github.com/linschq/airline-customer-segmentation" class="project-name"><h3>Airlines Customer Segmentation</h3></a>
+                    <a href="https://github.com/linschq/airline-customer-segmentation" class="project-name" target="_blank"><h3>Airlines Customer Segmentation</h3></a>
                     <p>By <a href="index.html" class="project-name">Alina</a></p>
                     <p>Category: <a href="#" class="category-link" onclick="filterProjects('Machine Learning', 'all')">Machine Learning</a></p>
-                    <p>Date: 24/06/2024</p>
-                    <a href="https://github.com/linschq/airline-customer-segmentation" class="read-more">Read more</a>
+                    <p>Date: 22/06/2024</p>
+                    <div class="project-summary">
+                        <p>This project aims to segment airline customers based on their behavior using the LRFMM (Length, Recency, Frequency, and Monetary) model. In this project, we collected customer data from airlines and applied LRFMM analysis to identify customer patterns and segments. With this technique, this project helps airlines understand their customer segments, which in turn can improve marketing strategies, service personalization and customer satisfaction. Implementing the LRFMM model allows companies to determine the most valuable customer segments and direct their marketing efforts more effectively.</p>
+                    </div>
+                    <div class="skills-needed">
+                        <p>Skills Needed:</p>
+                        <div class="tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">LRFM Modeling</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-Learn</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/linschq/airline-customer-segmentation" class="read-more" target="_blank">Read more</a>
                 </div>
             </div>
+            
             <div class="project-card" data-category="Exploratory Data Analysis" data-year="2024">
-                <img src="images/Projects/co2emission.png" alt="Project 1">
+                <img src="images/Projects/co2emission.png" alt="CO2 Emissions and Energy Consumption">
                 <div class="project-details">
-                    <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="project-name"><h3>Assessing the Dynamics of CO2 Emissions and Energy Consumption: A Global Perspective</h3></a>
+                    <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="project-name" target="_blank"><h3>Assessing the Dynamics of CO2 Emissions and Energy Consumption: A Global Perspective</h3></a>
                     <p>By <a href="index.html" class="project-name">Alina</a></p>
                     <p>Category: <a href="#" class="category-link" onclick="filterProjects('Exploratory Data Analysis', 'all')">Exploratory Data Analysis</a></p>
                     <p>Date: 07/06/2024</p>
-                    <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="read-more">Read more</a>
+                    <div class="project-summary">
+                        <p>This project aims to analyze the dynamics of CO2 emissions and energy consumption from a global perspective. We use exploratory data analysis techniques to understand patterns of CO2 emissions across different countries. The project helps identify factors influencing CO2 emissions and energy consumption, providing valuable insights for more sustainable energy policies. By analyzing historical data and current trends, this project offers a robust foundation for decision-making in climate change mitigation and energy planning. The findings can assist policymakers in devising strategies to reduce carbon footprints and optimize energy use, contributing to global sustainability efforts.</p>
+                    </div>
+                    <div class="skills-needed">
+                        <p>Skills Needed:</p>
+                        <div class="tags">
+                            <span class="tag">Climate Science</span>
+                            <span class="tag">Exploratory Data Analysis</span>
+                            <span class="tag">Matplotlib</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="read-more" target="_blank">Read more</a>
                 </div>
             </div>
+            
             <div class="project-card" data-category="Data Visualization" data-year="2024">
-                <img src="images/Projects/streamlit edu dash.png" alt="Project 2">
+                <img src="images/Projects/streamlit edu dash.png" alt="Streamlit Educational Dashboard">
                 <div class="project-details">
-                    <a href="https://educational-dashboard.streamlit.app" class="project-name"><h3>End to End Project: Streamlit Educational Dashboard</h3></a>
+                    <a href="https://educational-dashboard.streamlit.app" class="project-name" target="_blank"><h3>Streamlit Educational Dashboard</h3></a>
                     <p>By <a href="index.html" class="project-name">Alina</a></p>
                     <p>Category: <a href="#" class="category-link" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</a></p>
                     <p>Date: 01/06/2024</p>
-                    <a href="https://educational-dashboard.streamlit.app" class="read-more">Read more</a>
+                    <div class="project-summary">
+                        <p>This project involves creating a comprehensive educational dashboard using Streamlit. The dashboard provides real-time insights into various aspects of student performance and engagement. Key features include demographic analysis, accuracy based on lesson categories, user engagement metrics, top-performing and most active students, and user retention trends. The dashboard enables educators to identify areas needing improvement and to tailor interventions accordingly, enhancing the overall learning experience.</p>
+                    </div>
+                    <div class="skills-needed">
+                        <p>Skills Needed:</p>
+                        <div class="tags">
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Education Analytics</span>
+                            <span class="tag">Matplotlib</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Plotly</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Streamlit</span>
+                        </div>
+                    </div>
+                    <a href="https://educational-dashboard.streamlit.app" class="read-more" target="_blank">Read more</a>
                 </div>
             </div>
+            
             <div class="project-card" data-category="Data Visualization" data-year="2024">
-                <img src="images/Projects/indonesia education landscape.png" alt="Project 3">
+                <img src="images/Projects/indonesia education landscape.png" alt="Overview of Indonesia Education Landscape">
                 <div class="project-details">
-                    <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="project-name"><h3>Overview of Indonesia Education Landscape</h3></a>
+                    <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="project-name" target="_blank"><h3>Overview of Indonesia Education Landscape</h3></a>
                     <p>By <a href="index.html" class="project-name">Alina</a></p>
                     <p>Category: <a href="#" class="category-link" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</a></p>
                     <p>Date: 30/03/2024</p>
-                    <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="read-more">Read more</a>
+                    <div class="project-summary">
+                        <p>This project provides an in-depth analysis of the educational landscape in Indonesia from 2021 to 2023. The dashboard highlights various aspects, including the gross participation rate across different education levels, the average education costs, and the quality gap as indicated by PISA scores in math, reading, and science. Additionally, it explores trends in the private Indonesian EdTech sector and their engagement with the government. The insights aim to identify key areas for improvement in educational access, quality, and financial sustainability.</p>
+                    </div>
+                    <div class="skills-needed">
+                        <p>Skills Needed:</p>
+                        <div class="tags">
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Educational Analytics</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                    </div>
+                    <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="read-more" target="_blank">Read more</a>
                 </div>
             </div>
+            
         </div>
     </main>
     <footer>
@@ -274,7 +362,11 @@
             <a href="https://www.linkedin.com/in/alina-ady/"><img src="icons/linkedin.png" alt="LinkedIn"></a>
             <a href="https://github.com/linschq"><img src="icons/github.png" alt="GitHub"></a>
         </div>
+        <div class="copyright">
+            <p>&copy; 2024 Alina's Portfolio. Design by Alina, images generated by Dall-E</p>
+        </div>
     </footer>
+    
 
     <script>
         // Function to filter projects
