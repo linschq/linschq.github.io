@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Alina's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -153,6 +153,23 @@
         .arrow-right {
             right: 0;
         }
+
+        @media (max-width: 768px) {
+            .post {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .arrow {
+                display: none;
+            }
+
+            .container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -166,7 +183,7 @@
                 <a href="index.html">About Me</a>
                 <a href="Projects.html">Projects</a>
                 <a href="Blog.html">Blog</a>
-                <a href="mailto:alinaadyana@gmail.com" class="contact">Request CV</a>
+                <a href="mailto:alinaadyana@gmail.com?subject=Request%20CV&body=Dear%20Alina,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20copy%20of%20your%20CV.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]" class="contact">Request CV</a>
             </div>
         </nav>
     </header>

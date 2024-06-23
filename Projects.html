@@ -26,13 +26,13 @@
         }
 
         nav a {
-            color: #000; /* Default link color black */
+            color: #000;
             text-decoration: none;
             margin: 0 10px;
         }
 
         nav a:hover {
-            color: #ffb6c1; /* Pastel pink on hover */
+            color: #ffb6c1;
         }
 
         nav .contact {
@@ -69,10 +69,16 @@
             margin: 5px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .filter-buttons button.active {
             background-color: #333;
+            color: #fff;
+        }
+
+        .filter-buttons button:hover {
+            background-color: #555;
             color: #fff;
         }
 
@@ -83,12 +89,14 @@
         }
 
         .project-card {
-            display: none; /* Hide all project cards by default */
+            display: flex;
             background-color: #f8f8f8;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            transition: transform 0.3s ease;
         }
 
         .project-card img {
@@ -97,17 +105,24 @@
             object-fit: cover;
             border-radius: 10px;
             margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
         }
 
         .project-details {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            flex-grow: 1;
         }
 
         .project-details h3 {
             margin-top: 0;
             color: #222;
+            transition: color 0.3s ease;
         }
 
         .project-details p {
@@ -115,42 +130,43 @@
         }
 
         .project-details a.category-link {
-            color: #000; /* Default link color black */
+            color: #000;
             text-decoration: none;
             cursor: pointer;
         }
 
         .project-details a.category-link:hover {
             text-decoration: underline;
-            color: #ffb6c1; /* Pastel pink on hover */
+            color: #ffb6c1;
         }
 
         .project-details a.project-name {
-            color: #000; /* Default link color black */
+            color: #000;
             text-decoration: none;
             cursor: pointer;
+            transition: color 0.3s ease;
         }
 
         .project-details a.project-name:hover {
-            color: #ffb6c1; /* Pastel pink on hover */
+            color: #ffb6c1;
         }
 
         .read-more {
             display: inline-block;
             margin-top: 10px;
-            color: #000; /* Default link color black */
+            color: #000;
             text-decoration: none;
             border: 1px solid #000;
             padding: 5px 10px;
             border-radius: 5px;
-            width: 100px; /* Set width for consistency */
-            text-align: center; /* Center text */
+            width: 100px;
+            text-align: center;
         }
 
         .read-more:hover {
             background-color: #000;
-            color: #ffb6c1; /* Pastel pink on hover */
-            border-color: #ffb6c1; /* Pastel pink border on hover */
+            color: #ffb6c1;
+            border-color: #ffb6c1;
         }
 
         footer {
@@ -164,15 +180,21 @@
             margin: 0 10px;
             color: #2e2c2c;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .contact-info a img {
             width: 20px;
             height: 20px;
+            transition: filter 0.3s ease;
         }
 
         .contact-info a:hover {
             color: #555;
+        }
+
+        .contact-info a:hover img {
+            filter: invert(55%) sepia(5%) saturate(450%) hue-rotate(150deg) brightness(90%) contrast(80%);
         }
     </style>
 </head>
@@ -186,12 +208,11 @@
                 <a href="index.html">About Me</a>
                 <a href="Projects.html">Projects</a>
                 <a href="Blog.html">Blog</a>
-                <a href="mailto:alinaadyana@gmail.com" class="contact">Request CV</a>
+                <a href="mailto:alinaadyana@gmail.com?subject=Request%20CV&body=Dear%20Alina,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20copy%20of%20your%20CV.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]" class="contact">Request CV</a>
             </div>
         </nav>
     </header>
     <main>
-        <div class="projects-header">Projects</div>
         <div class="filter-buttons">
             <button class="filter-btn" onclick="filterProjects('all', 'all')">All</button>
             <button class="filter-btn" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</button>
@@ -203,6 +224,17 @@
             <button class="filter-btn" onclick="filterProjects('all', '2024')">2024</button>
         </div>
         <div class="project-list">
+            <!-- Template for new project at the top -->
+            <div class="project-card" data-category="Machine Learning" data-year="2024">
+                <img src="images/Projects/Project 4.webp" alt="Airlines Customer Segmentation">
+                <div class="project-details">
+                    <a href="https://github.com/linschq/airline-customer-segmentation" class="project-name"><h3>Airlines Customer Segmentation</h3></a>
+                    <p>By <a href="index.html" class="project-name">Alina</a></p>
+                    <p>Category: <a href="#" class="category-link" onclick="filterProjects('Machine Learning', 'all')">Machine Learning</a></p>
+                    <p>Date: 24/06/2024</p>
+                    <a href="https://github.com/linschq/airline-customer-segmentation" class="read-more">Read more</a>
+                </div>
+            </div>
             <div class="project-card" data-category="Exploratory Data Analysis" data-year="2024">
                 <img src="images/Projects/co2emission.png" alt="Project 1">
                 <div class="project-details">
@@ -216,7 +248,7 @@
             <div class="project-card" data-category="Data Visualization" data-year="2024">
                 <img src="images/Projects/streamlit edu dash.png" alt="Project 2">
                 <div class="project-details">
-                    <a href="https://educational-dashboard.streamlit.app" class="project-name"><h3>Streamlit Educational Dashboard</h3></a>
+                    <a href="https://educational-dashboard.streamlit.app" class="project-name"><h3>End to End Project: Streamlit Educational Dashboard</h3></a>
                     <p>By <a href="index.html" class="project-name">Alina</a></p>
                     <p>Category: <a href="#" class="category-link" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</a></p>
                     <p>Date: 01/06/2024</p>

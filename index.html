@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,13 +27,13 @@
         }
 
         nav a {
-            color: #000; /* Default link color black */
+            color: #000;
             text-decoration: none;
             margin: 0 10px;
         }
 
         nav a:hover {
-            color: #ffb6c1; /* Pastel pink on hover */
+            color: #ffb6c1;
         }
 
         nav .contact {
@@ -52,6 +53,7 @@
 
         .intro {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             padding: 40px 0;
@@ -104,16 +106,28 @@
 
         .social-links a {
             margin: 0 5px;
+            transition: transform 0.3s, filter 0.3s;
         }
 
-        .social-links img {
+        .social-links a img {
             width: 24px;
             height: 24px;
         }
 
+        .social-links a:hover img {
+            filter: grayscale(100%);
+        }
+
         .intro-image img {
-            width: 300px;
+            width: 100%;
+            max-width: 350px;
             border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intro-image img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .quote {
@@ -123,6 +137,9 @@
             text-align: center;
             font-size: 1.5em;
             margin: 20px 0;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            letter-spacing: 1px;
         }
 
         .projects {
@@ -137,10 +154,14 @@
 
         .project-cards {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
         }
 
         .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: #f8f8f8;
             padding: 20px;
             border: 1px solid #ddd;
@@ -148,6 +169,7 @@
             width: 30%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .project-card h3 {
@@ -157,18 +179,25 @@
 
         .project-card img {
             width: 100%;
-            height: 300px;
+            height: 200px;
+            object-fit: cover;
             border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card img:hover {
+            transform: scale(1.05);
         }
 
         .project-card a {
-            color: #000; /* Default link color black */
+            color: #000;
             text-decoration: none;
         }
 
         .project-card a:hover {
             text-decoration: underline;
-            color: #ffb6c1; /* Pastel pink on hover */
+            color: #ffb6c1;
         }
 
         .read-more {
@@ -179,6 +208,7 @@
             border: 1px solid #222;
             padding: 5px 10px;
             border-radius: 5px;
+            width: fit-content;
         }
 
         .read-more:hover {
@@ -207,13 +237,13 @@
         }
 
         .other-stuff ul li a {
-            color: #000; /* Default link color black */
+            color: #000;
             text-decoration: none;
         }
 
         .other-stuff ul li a:hover {
             text-decoration: underline;
-            color: #ffb6c1; /* Pastel pink on hover */
+            color: #ffb6c1;
         }
 
         footer {
@@ -237,6 +267,26 @@
         .contact-info a:hover {
             color: #555;
         }
+
+        @media (max-width: 768px) {
+            .intro-text {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .intro {
+                flex-direction: column;
+            }
+
+            .intro-image {
+                margin-top: 20px;
+            }
+
+            .project-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -249,7 +299,7 @@
                 <a href="index.html">About Me</a>
                 <a href="Projects.html">Projects</a>
                 <a href="Blog.html">Blog</a>
-                <a href="mailto:alinaadyana@gmail.com" class="contact">Request CV</a>
+                <a href="mailto:alinaadyana@gmail.com?subject=Request%20CV&body=Dear%20Alina,%0D%0A%0D%0AI%20would%20like%20to%20request%20a%20copy%20of%20your%20CV.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]" class="contact">Request CV</a>
             </div>
         </nav>
     </header>
@@ -279,22 +329,22 @@
             <h2>Recent projects</h2>
             <div class="project-cards">
                 <div class="project-card">
-                    <h3><a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb">Assessing the Dynamics of CO2 Emissions and Energy Consumption: A Global Perspective</a></h3>
+                    <h3><a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb">Assessing the Dynamics of CO2 Emissions and Energy Consumption</a></h3>
                     <p>Category: <a href="Projects.html?category=Exploratory%20Data%20Analysis">Exploratory Data Analysis</a></p>
                     <img src="images/Projects/co2emission.png" alt="Project 1">
                     <p>07/06/2024</p>
                     <a href="https://github.com/linschq/Assessing-the-Dynamics-of-CO2-Emissions-and-Energy-Consumption-A-Global-Perspective/blob/main/CO2%20Emission_fix_linschq.ipynb" class="read-more">Read more</a>
                 </div>
                 <div class="project-card">
-                    <h3><a href="https://educational-dashboard.streamlit.app">Streamlit Educational Dashboard</a></h3>
-                    <p>Category: <a href="Projects.html?category=Data%20Visualization">Data Visualization</a></p>
+                    <h3><a href="https://educational-dashboard.streamlit.app">End to End Project: Streamlit Educational Dashboard</a></h3>
+                    <p>Category: <a href="Projects.html?category=Data Visualization">Data Visualization</a></p>
                     <img src="images/Projects/streamlit edu dash.png" alt="Project 2">
                     <p>01/06/2024</p>
                     <a href="https://educational-dashboard.streamlit.app" class="read-more">Read more</a>
                 </div>
                 <div class="project-card">
                     <h3><a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1">Overview of Indonesia Education Landscape</a></h3>
-                    <p>Category: <a href="Projects.html?category=Data%20Visualization">Data Visualization</a></p>
+                    <p>Category: <a href="Projects.html?category=Data Visualization">Data Visualization</a></p>
                     <img src="images/Projects/indonesia education landscape.png" alt="Project 3">
                     <p>30/03/2024</p>
                     <a href="https://public.tableau.com/app/profile/alin.aa/viz/Pendidikanindonesia/Dashboard1" class="read-more">Read more</a>
