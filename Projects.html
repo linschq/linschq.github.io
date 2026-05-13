@@ -246,12 +246,41 @@
             <button class="filter-btn" onclick="filterProjects('Data Visualization', 'all')">Data Visualization</button>
             <button class="filter-btn" onclick="filterProjects('Exploratory Data Analysis', 'all')">Exploratory Data Analysis</button>
             <button class="filter-btn" onclick="filterProjects('Machine Learning', 'all')">Machine Learning</button>
+            <button class="filter-btn" onclick="filterProjects('Data Engineering', 'all')">Data Engineering</button>
         </div>
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterProjects('all', 'all')">All Years</button>
             <button class="filter-btn" onclick="filterProjects('all', '2024')">2024</button>
+            <button class="filter-btn" onclick="filterProjects('all', '2025')">2025</button>
         </div>
         <div class="project-list">
+            <!-- New project card -->
+            <div class="project-card" data-category="Data Engineering" data-year="2025">
+                <img src="images/Projects/health-policy-news-scanner.png" alt="Indonesian Health Policy News Scanner">
+                <div class="project-details">
+                    <a href="https://github.com/linschq/news-scanner" class="project-name" target="_blank"><h3>Indonesian Health Policy News Scanner</h3></a>
+                    <p>By <a href="index.html" class="project-name">Alina</a></p>
+                    <p>Category: <a href="#" class="category-link" onclick="filterProjects('Data Engineering', 'all')">Data Engineering</a></p>
+                    <p>Date: 13/05/2025</p>
+                    <div class="project-summary">
+                        <p>An automated intelligence system that scrapes, filters, and monitors Indonesian health policy documents from Kemenkes JDIH, LKPP, and other government sources. Features a React dashboard with real-time signal detection, source tier classification, and weekly digest reporting — designed for health policy analysts to stay ahead of regulatory changes without manual monitoring.</p>
+                    </div>
+                    <div class="skills-needed">
+                        <p>Skills Needed:</p>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Web Scraping</span>
+                            <span class="tag">BeautifulSoup</span>
+                            <span class="tag">Selenium</span>
+                            <span class="tag">API Development</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/linschq/news-scanner" class="read-more" target="_blank">Read more</a>
+                </div>
+            </div>
             <!-- Template for new project at the top -->
             <div class="project-card" data-category="Machine Learning" data-year="2024">
                 <img src="images/Projects/Project 4.webp" alt="Airlines Customer Segmentation">
